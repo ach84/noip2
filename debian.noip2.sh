@@ -1,5 +1,13 @@
 #! /bin/sh
-# /etc/init.d/noip2.sh
+
+### BEGIN INIT INFO
+# Provides:        noip2
+# Required-Start:  $network $remote_fs $syslog
+# Required-Stop:   $network $remote_fs $syslog
+# Default-Start:   2 3 4 5
+# Default-Stop:
+# Short-Description: Start NOIP2 daemon
+### END INIT INFO
 
 # Supplied by no-ip.com
 # Modified for Debian GNU/Linux by Eivind L. Rygge <eivind@rygge.org>
@@ -7,7 +15,7 @@
 
 # . /etc/rc.d/init.d/functions  # uncomment/modify for your killproc
 
-DAEMON=/usr/local/bin/noip2
+DAEMON=/opt/bin/noip2
 NAME=noip2
 
 test -x $DAEMON || exit 0

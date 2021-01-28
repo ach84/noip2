@@ -2,9 +2,9 @@ TGT=noip2
 CC=gcc
 PKG=noip-2.1.tgz
 
-PREFIX=/usr/local
+PREFIX=/
 CONFDIR=${PREFIX}/etc
-BINDIR=${PREFIX}/bin
+BINDIR=/opt/bin
 
 # these defines are for Linux
 LIBS=
