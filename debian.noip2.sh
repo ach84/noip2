@@ -1,8 +1,8 @@
-#! /bin/sh
+#!/bin/bash
 
 ### BEGIN INIT INFO
 # Provides:        noip2
-# Required-Start:  $network $remote_fs $syslog
+# Required-Start:  $network $remote_fs $syslog pppd
 # Required-Stop:   $network $remote_fs $syslog
 # Default-Start:   2 3 4 5
 # Default-Stop:
@@ -17,13 +17,14 @@
 
 DAEMON=/opt/bin/noip2
 NAME=noip2
+OPTS=""
 
 test -x $DAEMON || exit 0
 
 case "$1" in
     start)
     echo -n "Starting dynamic address update: "
-    start-stop-daemon --start --exec $DAEMON
+    start-stop-daemon --start --exec $DAEMON -- $OPTS
     echo "noip2."
     ;;
     stop)
@@ -35,7 +36,7 @@ case "$1" in
     restart)
     echo -n "Restarting dynamic address update: "
     start-stop-daemon --stop --oknodo --retry 30 --exec $DAEMON
-    start-stop-daemon --start --exec $DAEMON
+    start-stop-daemon --start --exec $DAEMON -- $OPTS
     echo "noip2."
     ;;
 

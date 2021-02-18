@@ -2,7 +2,7 @@ TGT=noip2
 CC=gcc
 PKG=noip-2.1.tgz
 
-PREFIX=/
+PREFIX=
 CONFDIR=${PREFIX}/etc
 BINDIR=/opt/bin
 
