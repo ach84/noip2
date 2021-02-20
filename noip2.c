@@ -345,7 +345,7 @@
 "Error! -C option can only be used with -F -Y -U -I -c -u -p -x options."
 #define CMSG101	" Both -u and -p options must be used together."
 
-int	debug			= 	0;
+int	debug			= 	1;
 int	timed_out		=	0;
 int	background		=	1;	// new default
 int	port_to_use		=	CLIENT_IP_PORT;
@@ -1054,7 +1054,7 @@ int run_as_background()
 		    }
 #ifdef DEBUG
 		    if (my_instance->debug)  {
-		        Msg("! Last_IP_Addr = %s, IP = %s",my_instance->Last_IP_Addr, IPaddress);
+		        Msg("Last_IP_Addr = %s, IP = %s",my_instance->Last_IP_Addr, IPaddress);
 #if FORCE_UPDATE
 			Msg("Force_Update == %d\n", Force_Update);
 #endif
